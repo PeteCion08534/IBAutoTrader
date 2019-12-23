@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <listener>
+    <listener-class>
+			org.springframework.web.context.request.RequestContextListener
+		</listener-class>
+  </listener>
+  <listener>
+    <listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+  </listener>
+  <filter>
+    <description>generated-persistence-filter</description>
+    <filter-name>LocOracleThetaFilter</filter-name>
+    <filter-class>
+			org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter
+		</filter-class>
+    <init-param>
+      <param-name>entityManagerFactoryBeanName</param-name>
+      <param-value>LocOracleTheta</param-value>
+    </init-param>
+  </filter>
+  <filter>
+    <description>generated-sitemesh-filter</description>
+    <filter-name>Sitemesh Filter</filter-name>
+    <filter-class>
+			com.opensymphony.module.sitemesh.filter.PageFilter
+		</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LocOracleThetaFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>Sitemesh Filter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description>generated-servlet</description>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>
+				classpath:theta11-generated-web-context.xml,classpath:theta11-web-context.xml
+			</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <description>generated-resources-servlet</description>
+    <servlet-name>Resource Servlet</servlet-name>
+    <servlet-class>
+			org.springframework.js.resource.ResourceServlet
+		</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+<!--  REMOVED - PCION - 2013-05-31 -->
+  <servlet-mapping>
+    <servlet-name>Resource Servlet</servlet-name>
+    <url-pattern>/resources/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>*.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listSpreads</url-pattern>
+  </servlet-mapping>
+<!--  REMOVED - PCION - 2013-05-31 
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteStrategyStrategyAccounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveStrategyStrategyAccounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectStrategyProfitLosses</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteStrategyProfitLosses</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listStrategyStrategyAccounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editStrategyStrategyAccounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectStrategyStrategyAccounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/indexStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newStrategyStrategyAccounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveStrategyProfitLosses</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editStrategyProfitLosses</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>
+			/confirmDeleteStrategyStrategyAccounts
+		</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listStrategyProfitLosses</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteStrategyProfitLosses</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newStrategyProfitLosses</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectProfitLoss</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listProfitLossStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newProfitLoss</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteProfitLoss</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editProfitLoss</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/indexProfitLoss</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectProfitLossStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteProfitLossStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveProfitLossStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newProfitLossStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editProfitLossStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteProfitLossStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveProfitLoss</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteProfitLoss</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listIbAccountStrategyAccounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newIbAccountStrategyAccounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectIbAccountStrategyAccounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteIbAccountStrategyAccounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/indexIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editIbAccountStrategyAccounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>
+			/confirmDeleteIbAccountStrategyAccounts
+		</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveIbAccountStrategyAccounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newSnapshotOptionSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteSnapshotOptionSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editSnapshotOptionSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editSnapshotOption</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newSnapshotOption</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveSnapshotOption</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectSnapshotOption</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/indexSnapshotOption</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectSnapshotOptionSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteSnapshotOption</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteSnapshotOption</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveSnapshotOptionSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listSnapshotOptionSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteSnapshotOptionSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeletePositionSpreads</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/indexPosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newPositionSpreads</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeletePositionStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editPositionStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listPositionSpreads</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectPosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/savePositionStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeletePosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editPosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deletePosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/savePosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listPositionStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newPosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectPositionSpreads</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editPositionSpreads</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/savePositionSpreads</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deletePositionStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deletePositionSpreads</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectPositionStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newPositionStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newHoliday</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteHoliday</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectHoliday</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteHoliday</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editHoliday</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveHoliday</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/indexHoliday</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveStrategyAccountStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/indexStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editStrategyAccountIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newStrategyAccountIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listStrategyAccountPositions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newStrategyAccountStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editStrategyAccountPositions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listStrategyAccountStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveStrategyAccountIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>
+			/confirmDeleteStrategyAccountIbAccount
+		</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newStrategyAccountPositions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectStrategyAccountIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editStrategyAccountStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>
+			/confirmDeleteStrategyAccountPositions
+		</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listStrategyAccountIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteStrategyAccountStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveStrategyAccountPositions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editStrategyAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteStrategyAccountStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteStrategyAccountIbAccount</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteStrategyAccountPositions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectStrategyAccountStrategy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectStrategyAccountPositions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveThetaException</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newThetaException</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteThetaException</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectThetaException</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editThetaException</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteThetaException</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/indexThetaException</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newSpread</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectSpread</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveSpread</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteSpreadPosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectSpreadPosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newSpreadPosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listSpreadPosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteSpread</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteSpreadPosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editSpreadPosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/indexSpread</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editSpread</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveSpreadPosition</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteSpread</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/indexSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteSnapshotSnapshotOptions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/listSnapshotSnapshotOptions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectSnapshotSnapshotOptions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newSnapshotSnapshotOptions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteSnapshotSnapshotOptions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveSnapshotSnapshotOptions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editSnapshotSnapshotOptions</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveSnapshot</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/indexHeartbeat</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/deleteHeartbeat</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/saveHeartbeat</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/selectHeartbeat</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/editHeartbeat</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/confirmDeleteHeartbeat</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>theta11 Servlet</servlet-name>
+    <url-pattern>/newHeartbeat</url-pattern>
+  </servlet-mapping>
+ END OF REMOVAL -->
+</web-app>
